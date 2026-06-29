@@ -5,6 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Khotso Fusi — Developer</title>
 <style>
+  .hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:3rem;
+}
+.hero-photo{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.hero-photo img{
+  width:340px;
+  height:420px;
+  object-fit:cover;
+  object-position:top;
+  border:1px solid var(--border);
+  filter:grayscale(20%);
+  position:relative;
+  z-index:1;
+}
+.hero-photo::after{
+  content:'';
+  position:absolute;
+  width:340px;
+  height:420px;
+  border:1px solid var(--teal);
+  transform:translate(12px,12px);
+  z-index:0;
+}
+.hero-photo{position:relative;}
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;}
+  .hero-photo{display:none;}
+}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 :root{
   --bg:#060d14;
@@ -401,7 +436,7 @@ footer{
   <div class="hero-content">
     <div class="tag">Available for freelance work</div>
     <h1>
-      <span class="name">KHOTSO FUSI</span>
+      <span class="name">Khotso Fusi</span>
       <span class="role">
         <span id="typed"></span><span class="cursor">|</span>
       </span>
@@ -413,6 +448,9 @@ footer{
       <a href="#portfolio" class="btn btn-fill">View My Work</a>
       <a href="#contact" class="btn btn-ghost">Let's Talk</a>
     </div>
+  </div>
+  <div class="hero-photo">
+    <img src="me.jpg" alt="Khotso Fusi"/>
   </div>
   <div class="scroll-hint">
     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
